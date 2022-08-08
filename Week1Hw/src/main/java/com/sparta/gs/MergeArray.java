@@ -1,29 +1,36 @@
 package com.sparta.gs;
 
 public class MergeArray {
-    public static int[] mergeArray(int[] arr1, int[] arr2) {
-//        int[] arr1 = {1,3,5,7};
-//        int[] arr2 = {2,4,6,8,9,10};
-        int[] arr3 = new int[arr1.length + arr2.length];
+    public static int[] mergeArraySorter(int[] arr1, int[] arr2) {
+        int arrayLengths = arr1.length + arr2.length;
+        int[] sortedArray = new int[arrayLengths];
 
-        int arr1And2Length = arr1.length + arr2.length;
-        System.out.println(arr1And2Length);
+        int currentArr1Index = 0;
+        int currentArr2Index = 0;
 
-        int countArr1 = 0;
-        int countArr2 = 0;
-//        int countMergeArray;
+        mergeArray(arr1,arr2,arrayLengths,sortedArray,currentArr1Index,currentArr2Index);
+        return sortedArray;
+    }
 
-        for (int a = 0; a < arr1And2Length; a ++) {
-            for (int b = 0; b < arr1.length -1 && b < arr2.length -1 ; b++) {
-                if (arr1[b] < arr2[b]) {
-                    arr3[b] = arr1[b];
-                    countArr1++;
-                } else if (arr1[b] > arr2[b]) {
-                    arr3[b] = arr2[b];
-                    countArr2++;
-                }
+    private static void mergeArray(int[] arr1,int[] arr2,int arrayLengths,int[] sortedArray,int currentArr1Index, int currentArr2Index) {
+        for(int indexOfSortArray = 0; indexOfSortArray <= arrayLengths - 1; indexOfSortArray++) {
+            if (currentArr1Index > arr1.length - 1) {
+                sortedArray[indexOfSortArray] = arr2[currentArr2Index];
+                currentArr2Index++;
+            } else if (currentArr2Index > arr2.length - 1) {
+                sortedArray[indexOfSortArray] = arr1[currentArr2Index];
+                currentArr1Index++;
+            } else if (arr1[currentArr1Index] < arr2[currentArr2Index]) {
+                sortedArray[indexOfSortArray] = arr1[currentArr1Index];
+                currentArr1Index++;
+            } else if (arr2[currentArr2Index] < arr1[currentArr1Index]) {
+                sortedArray[indexOfSortArray] = arr2[currentArr2Index];
+                currentArr2Index++;
+            } else {
+                sortedArray[indexOfSortArray] = arr1[currentArr1Index];
+                currentArr1Index++;
             }
         }
-        return arr3;
     }
+
 }

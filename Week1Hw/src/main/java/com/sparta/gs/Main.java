@@ -21,5 +21,11 @@ public class Main {
 
         System.out.println(Arrays.toString(sort.bubbleSort(new int[]{11, 9, 15, 1, 2, 6})));
 
+        int[] arr1 = {1, 3, 5, 7, 9, 11, 13, 15};
+        int[] arr2 = {0, 2, 4, 6, 8, 10, 12, 14};
+
+        System.out.println(Arrays.toString(MergeArray.mergeArraySorter(arr1, arr2)));
+
+
     }
 }
