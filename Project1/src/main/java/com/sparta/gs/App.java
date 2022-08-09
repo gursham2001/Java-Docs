@@ -1,4 +1,7 @@
-package com.sparta.gs.BubbleSort;
+package com.sparta.gs;
+
+import com.sparta.gs.sortAlgorithms.BubbleSort;
+import com.sparta.gs.sortAlgorithms.MergeSort;
 
 import java.util.Arrays;
 
@@ -6,5 +9,7 @@ public class App {
     public static void main(String[] args) {
         BubbleSort sort = new BubbleSort();
         System.out.println(Arrays.toString(sort.bubbleSort(new int[]{11, 9, 15, 1, 2, 6})));
+
     }
 }
+
