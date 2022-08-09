@@ -5,23 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d67a830b-f34a-412a-90f6-177e8aac8523" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../codeWarsPractice/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../codeWarsPractice/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../codeWarsPractice/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../codeWarsPractice/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../codeWarsPractice/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../codeWarsPractice/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../codeWarsPractice/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../codeWarsPractice/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../codeWarsPractice/src/main/java/com/sparta/gs/AlternatingCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../codeWarsPractice/src/main/java/com/sparta/gs/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../codeWarsPractice/src/main/java/com/sparta/gs/ReversedStrings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../codeWarsPractice/src/main/java/com/sparta/gs/reduceButGrow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../codeWarsPractice/src/test/java/com/sparta/gs/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Project1/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project1/src/main/java/com/sparta/gs/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../unitTesting/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +44,11 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="RunManager" selected="JUnit.FizzBuzzTests (1)">
     <configuration name="DecoratorPattern" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.sparta.gs.Decorator.DecoratorPattern" />
