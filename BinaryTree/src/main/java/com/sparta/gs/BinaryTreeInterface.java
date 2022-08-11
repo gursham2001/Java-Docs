@@ -3,7 +3,6 @@ package com.sparta.gs;
 public interface BinaryTreeInterface {
     // Build a binary tree which can be used to sort a simple array of ints
 
-    public interface BinaryTree {
         int getRootElement();
 
         int getNumberOfElements();
@@ -21,5 +20,5 @@ public interface BinaryTreeInterface {
         int[] getSortedTreeAsc();
 
         int[] getSortedTreeDesc();
-    }
+
 }

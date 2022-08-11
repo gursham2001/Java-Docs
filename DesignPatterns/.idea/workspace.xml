@@ -5,10 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d67a830b-f34a-412a-90f6-177e8aac8523" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../GenericsTheBoxExample/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GenericsTheBoxExample/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GenericsTheBoxExample/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GenericsTheBoxExample/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GenericsTheBoxExample/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GenericsTheBoxExample/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GenericsTheBoxExample/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GenericsTheBoxExample/src/main/java/com/sparta/gs/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GenericsTheBoxExample/src/test/java/com/sparta/gs/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BinaryTree/src/main/java/com/sparta/gs/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BinaryTree/src/main/java/com/sparta/gs/BinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BinaryTree/src/main/java/com/sparta/gs/BinaryTreeInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BinaryTree/src/main/java/com/sparta/gs/BinaryTreeInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Project1/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project1/src/main/java/com/sparta/gs/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../unitTesting/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project1/src/main/java/com/sparta/gs/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project1/src/main/java/com/sparta/gs/start/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project1/src/main/java/com/sparta/gs/sortAlgorithms/BubbleSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project1/src/main/java/com/sparta/gs/sortAlgorithms/BubbleSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project1/src/main/java/com/sparta/gs/sortAlgorithms/MergeSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project1/src/main/java/com/sparta/gs/sortAlgorithms/MergeSort.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

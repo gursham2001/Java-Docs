@@ -1,26 +1,35 @@
 package com.sparta.gs.sortAlgorithms;
 
 import java.util.Arrays;
+import java.util.logging.Logger;
 
-public class BubbleSort {
-    public static int[] oneIteration(int[] arrayToSearch) {
-        int tempo = 0;
-        for (int i = 0; i < arrayToSearch.length - 1; i++) {
-            if (arrayToSearch[i] > arrayToSearch[i + 1]) {
-                tempo = arrayToSearch[i];
-                arrayToSearch[i] = arrayToSearch[i + 1];
-                arrayToSearch[i + 1] = tempo;
+public class BubbleSort implements Sorter{
+
+//    private static Logger logger = Logger.getLogger("my Logger");
+//    private static CustomHandler customHandler = new CustomHandler();
+    @Override
+    public int[] SortArray(int[] arrays) {
+//        logger.info("Calls the method below to execute the Bubble Sort");
+        return BubbleSort(arrays);
+    }
+    public static int[] BubbleSort(int[] search){
+//        logger.info("Sorting has begun");
+        int temp;
+        for (int i = 0; i < search.length; i++) {
+//            logger.info("first loop has begun");
+            for ( int elememt = 0; elememt < search.length - 1; elememt++){
+//                logger.info("second loop has begun");
+                if (search[elememt] > search[elememt + 1]){
+//                    logger.info("elements are being swapped if condition is met");
+                    temp = search[elememt];
+                    search[elememt] = search[elememt + 1];
+                    search[elememt + 1] = temp;
+                }
             }
         }
-        System.out.println("Values are " + Arrays.toString(arrayToSearch));
-        return arrayToSearch;
+//        logger.info("returns the array search");
+        return search;
     }
-    public static int[] bubbleSort(int[] arrayToSort) {
-        for (int i = 0; i < arrayToSort.length - 1; i++) {
-
-            arrayToSort = oneIteration(arrayToSort);
-        }
-        System.out.println("Values are " + Arrays.toString(arrayToSort));
-        return arrayToSort;
-    }
+    @Override
+    public String toString() {return "BubbleSort";}
 }

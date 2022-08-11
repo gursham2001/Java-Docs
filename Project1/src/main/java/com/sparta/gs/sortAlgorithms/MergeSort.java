@@ -1,76 +1,47 @@
 package com.sparta.gs.sortAlgorithms;
 
-public class MergeSort {
-
-    public static void main(String[] args) {
-        int[] array = {4,5,7,9,0,2};
-        System.out.println("Intial Array: ");
-        printArray(array);
-
-        array = mergeSort(array);
-        System.out.println("Sorted Array: ");
-        printArray(array);
+public class MergeSort implements Sorter {
+    @Override
+    public int[] SortArray(int[] arrays) {
+        mergeSort(arrays, arrays.length);
+        return arrays;
     }
-
-    private static void printArray(int[] array) {
-        for(int i : array) {
-            System.out.print(i + " ");
+    public static void mergeSort(int[] a, int number) {
+        // if n is 1
+        if (number < 2) {
+            return;
         }
-        System.out.println();
+        int midPoint = number / 2;
+        int[] l = new int[midPoint];
+        int[] r = new int[number - midPoint];
+        for (int i = 0; i < midPoint; i++) {
+            l[i] = a[i];
+        }
+        for (int i = midPoint; i < number; i++) {
+            r[i - midPoint] = a[i];
+        }
+        mergeSort(l, midPoint);
+        mergeSort(r, number - midPoint);
+        merge(a, l, r, midPoint, number - midPoint);
     }
-    
-    public static int[] mergeSort(int[] array) {
-        if(array.length <= 1) {
-            return array;
-        }
-
-        int midpoint = array.length / 2;
-
-        int[] left = new int[midpoint];
-        int[] right;
-        if (array.length % 2 == 0) {
-            right = new int[midpoint];
-        } else {
-            right = new int[midpoint + 1];
-        }
-
-        for (int i = 0; i < midpoint; i++) {
-            left[i] = array[i];
-        }
-        for (int j = 0; j < right.length; j++) {
-            right[j] = array[midpoint + j];
-        }
-
-
-
-        left = mergeSort(left);
-        right = mergeSort(right);
-
-        int[] result;
-        result = merge(left, right);
-
-        return result;
-    }
-
-    private static int[] merge(int[] left, int[] right) {
-        int[] result = new int[left.length + right.length];
-
-        int leftPointer, rightPointer, resultPointer;
-        leftPointer = rightPointer = resultPointer = 0;
-
-        while(leftPointer < left.length || rightPointer < right.length) {
-            if(leftPointer < left.length && rightPointer < right.length) {
-                if (left[leftPointer] < right[rightPointer]) {
-                    result[resultPointer++] = left[leftPointer++];
-                } else {
-                    result[resultPointer++] = right[rightPointer++];
-                }
-            } else if(leftPointer < left.length) {
-                result[resultPointer++] = left[leftPointer++];
-            } else if (rightPointer < right.length) {
-                result[resultPointer++] = right[rightPointer++];
+    public static void merge(int[] a, int[] l, int[] r, int left, int right) {
+        int i = 0, j = 0, k = 0;
+        while (i < left && j < right) {
+            if (l[i] <= r[j]) {
+                a[k++] = l[i++];
+            } else {
+                a[k++] = r[j++];
             }
         }
-        return result;
+        while (i < left) {
+            a[k++] = l[i++];
+        }
+        while (j < right) {
+            a[k++] = r[j++];
+        }
+    }
+    @Override
+    public String toString() {
+        return "MergeSort";
     }
 }

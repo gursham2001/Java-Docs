@@ -1,45 +1,48 @@
-package com.sparta.gs;
+package com.sparta.gs.sortAlgorithms.BinaryTree;
 
 // public - methods you can access
 // private - implementation
 // abstract away the nodes - os the user will only enter values and not the nodes
 
-public class BinaryTree implements BinaryTreeInterface{
-    // the way we build it is not the only way there are other ways to build the tree
+import com.sparta.gs.Exceptions.ChildNotFoundException;
 
-    // modelling the binary tree
-
+public class BinaryTree implements BinaryTreeInterface {
     private final Node rootNode;
+    private int index;
 
     public BinaryTree(int elements) {
         rootNode = new Node(elements);
     }
-
-    // public part of the binary method
+    // polymorphism
+    public BinaryTree(final int[] array) {
+        rootNode = new Node(array[0]);
+        for (int i = 1; i < array.length; i++) {
+            addElementToTree(array[i]);
+        }
+    }
     public void addElementToTree(int element) {
         addNodeToTree(rootNode, element);
     }
 
     @Override
     public int getRootElement() {
-        return 0;
+        return rootNode.getValue();
     }
-
     @Override
     public int getNumberOfElements() {
-        return 0;
+        // returns the numOfNodes method, with the root node as the parameter, will pass it
+        return numOfNodes(rootNode);
     }
-
     @Override
     public void addElement(int element) {
-
+        addNodeToTree(rootNode, element);
     }
-
     @Override
     public void addElements(int[] elements) {
-
+        for (int i : elements) {
+            addElementToTree(i);
+        }
     }
-
     // public of findNode
     public boolean findElement(int element) {
         // call the method and capture the node
@@ -52,40 +55,57 @@ public class BinaryTree implements BinaryTreeInterface{
             return false;
         }
     }
-
     @Override
     public int getLeftChild(int element) throws ChildNotFoundException {
-        return 0;
+        Node node = findNode(element);
+        return node.getLeftChild().getValue();
     }
-
     @Override
     public int getRightChild(int element) throws ChildNotFoundException {
-        return 0;
+        Node node = findNode(element);
+        return node.getRightChild().getValue();
     }
-
     @Override
     public int[] getSortedTreeAsc() {
-        return new int[0];
+        index = 0;
+        int[] sortedArray = new int[getNumberOfElements()];
+        return returnAscendingTree(sortedArray, rootNode);
     }
-
+    private int[] returnAscendingTree(int[] sortedArray, Node node) {
+        if (!node.isLeftChildEmpty()) {
+            returnAscendingTree(sortedArray, node.getLeftChild());
+        }
+        sortedArray[index++] = node.getValue();
+        if (!node.isRightChildEmpty()) {
+            returnAscendingTree(sortedArray, node.getRightChild());
+        }
+        return sortedArray;
+    }
     @Override
     public int[] getSortedTreeDesc() {
-        return new int[0];
+        int[] sortedArray = new int[getNumberOfElements()];
+        index = 0;
+        return returnDescendingTree(sortedArray, rootNode);
     }
+    private int[] returnDescendingTree(int[] sortedArray, Node node) {
 
-
-    // binary tree algorythm
+        if (!node.isRightChildEmpty()) {
+            returnDescendingTree(sortedArray, node.getRightChild());
+        }
+        sortedArray[index ++] = node.getValue();
+        if (!node.isLeftChildEmpty()) {
+            returnDescendingTree(sortedArray, node.getLeftChild());
+        }
+        return sortedArray;
+    }
     private void addNodeToTree(Node node, int element) {
         if (element < node.getValue()) {
-            // check if there is a existing child in the left
             if (node.isLeftChildEmpty()) {
                 node.setLeftChild(new Node(element));
             } else {
-                // recursively move to the next left parent as it exists
                 addNodeToTree(node.getLeftChild(), element);
             }
         } else {
-            // same for the right side
                 if (node.isRightChildEmpty()) {
                     node.setRightChild(new Node(element));
                 } else {
@@ -93,8 +113,6 @@ public class BinaryTree implements BinaryTreeInterface{
                 }
             }
     }
-
-    // functionality to check if an element exists in the tree
     private Node findNode(int element) {
         Node node = rootNode;
         while (node != null) {
@@ -108,9 +126,17 @@ public class BinaryTree implements BinaryTreeInterface{
             }
 
         }
-        // if no if statements are not fulfilled return null
         return null;
     }
+    private int numOfNodes(Node rootNode){
+        if (rootNode == null) {
+            return 0;
+        }
+        return 1 + numOfNodes(rootNode.getLeftChild()) + numOfNodes(rootNode.getRightChild());
+    }
 
-
+//    @Override
+//    public int[] SortArray(int[] arrays) {
+//        return new int[0];
+//    }
 }
