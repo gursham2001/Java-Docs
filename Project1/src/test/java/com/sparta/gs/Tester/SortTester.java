@@ -15,30 +15,27 @@ public class SortTester {
         private int [] unsortedArray;
 
         @BeforeAll
-        public static void chooseWhichSortToTestClass() throws SorterLoaderException {
+        public static void choiceOfSort() throws SorterLoaderException {
             sorter = SortFactory.getSorter(2);
             System.out.println("Testing using the " + sorter + " sorter");
         }
-
         @BeforeEach
-        public void setup() {
+        public void getRandomArray() {
             Random random = new Random();
             unsortedArray = new int[10];
             for (int i = 0; i < 10; i++) {
                 unsortedArray[i] = random.nextInt(100);
             }
         }
-
         @Test
-        public void testIsSorted() {
+        public void testToCheckIfArrayIsSorted() {
             int[] sortedArray = sorter.SortArray(unsortedArray);
             for (int i = 0; i < sortedArray.length - 1; i++) {
                 Assertions.assertTrue(sortedArray[i + 1] >= sortedArray[i]);
             }
         }
-
         @Test
-        public void testOddSizedArray() {
+        public void testingForOddSizeArray() {
             int[] unsortedArray = {7, 2, 4, 6, 1, 3, 8, 5, 9};
             int[] sortedArray = sorter.SortArray(unsortedArray);
             Assertions.assertEquals(sortedArray.length, unsortedArray.length);
@@ -47,9 +44,8 @@ public class SortTester {
                 Assertions.assertTrue(sortedArray[i + 1] >= sortedArray[i]);
             }
         }
-
         @Test
-        public void testArrayWithDuplicates() {
+        public void duplicatesTest() {
             int[] unsortedArray = {7, 2, 4, 2, 7};
             int[] sortedArray = sorter.SortArray(unsortedArray);
             System.out.println(sortedArray.length);
@@ -69,7 +65,7 @@ public class SortTester {
             }
         }
         @Test
-        public void testAlreadySortedArray(){
+        public void testArrayThatIsAlreadySorted(){
             int[] unsortedArray = {1, 2, 3, 4};
             int[] sortedArray = sorter.SortArray(unsortedArray);
             Assertions.assertEquals(sortedArray.length, unsortedArray.length);
@@ -78,13 +74,11 @@ public class SortTester {
             }
         }
         @Test
-        public void testLargeArray() {
+        public void testALargeArray() {
             int[] sortedArray = sorter.SortArray(unsortedArray);
             Assertions.assertEquals(sortedArray.length, unsortedArray.length);
             for (int i = 0; i < sortedArray.length - 1; i++){
                 Assertions.assertTrue(sortedArray[i + 1] >= sortedArray[i]);
             }
         }
-
-
 }

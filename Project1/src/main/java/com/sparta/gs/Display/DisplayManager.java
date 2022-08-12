@@ -9,7 +9,7 @@ public class DisplayManager {
     public static ArrayList<String> getMenuItems() {
         return new ArrayList<>(Arrays.asList(
                 "BubbleSorter",
-                "BinarySorter",
+                "BinarySorterAsc",
                 "MergeSorter",
                 "QuickSorter"
         ));
@@ -19,11 +19,11 @@ public class DisplayManager {
         System.out.println("Initial Array before sort\n" + Arrays.toString(arrayToSort));
     }
     public static void resultsPrinted(Sorter sorter, int[] arrayToSort) {
-        long start = System.nanoTime();
+        long startTime = System.nanoTime();
         int[] sortedArray = sorter.SortArray(arrayToSort);
         System.out.println("Array after its been sorted\n" + Arrays.toString(sortedArray));
-        long end = System.nanoTime();
-        System.out.println("It took " + (end-start) + " nanoseconds to complete this sort");
+        long endTime = System.nanoTime();
+        System.out.println("It took " + (endTime-startTime) + " nanoseconds to complete this sort");
     }
     public static void displayChoice() {
         System.out.println("Enter the array size you wish to have" );

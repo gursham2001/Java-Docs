@@ -1,6 +1,6 @@
 package com.sparta.gs.PerformanceTester;
 
-import com.sparta.gs.sortAlgorithms.BinarySort;
+import com.sparta.gs.sortAlgorithms.BinarySortAsc;
 import com.sparta.gs.sortAlgorithms.Sorter;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -23,7 +23,6 @@ public class BinarySortPerformanceTest {
             arrayToSort[i] = random.nextInt(1000)+1;
         }
     }
-
     @BeforeEach
     public void setup() {
         unsortedArray = arrayToSort.clone();
@@ -32,7 +31,7 @@ public class BinarySortPerformanceTest {
     @Test
     public void testBinarySorter() {
         System.out.println("Array Before\n" + Arrays.toString(unsortedArray));
-        Sorter sorter = new BinarySort();
+        Sorter sorter = new BinarySortAsc();
         long start = System.nanoTime();
         int[] sortedArray = sorter.SortArray(unsortedArray);
         long end = System.nanoTime();

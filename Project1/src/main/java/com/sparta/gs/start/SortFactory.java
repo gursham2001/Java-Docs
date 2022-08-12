@@ -9,7 +9,7 @@ public class SortFactory {
                 case 1:
                     return new BubbleSort();
                 case 2:
-                    return new BinarySort();
+                    return new BinarySortAsc();
                 case 3:
                     return new MergeSort();
                 case 4:

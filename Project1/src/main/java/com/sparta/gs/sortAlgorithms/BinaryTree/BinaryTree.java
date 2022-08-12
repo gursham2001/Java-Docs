@@ -6,7 +6,10 @@ package com.sparta.gs.sortAlgorithms.BinaryTree;
 
 import com.sparta.gs.Exceptions.ChildNotFoundException;
 
+import java.util.logging.Logger;
+
 public class BinaryTree implements BinaryTreeInterface {
+    private static Logger logger = Logger.getLogger("my Logger");
     private final Node rootNode;
     private int index;
 
@@ -72,6 +75,7 @@ public class BinaryTree implements BinaryTreeInterface {
         return returnAscendingTree(sortedArray, rootNode);
     }
     private int[] returnAscendingTree(int[] sortedArray, Node node) {
+        logger.info("return ascending tree");
         if (!node.isLeftChildEmpty()) {
             returnAscendingTree(sortedArray, node.getLeftChild());
         }

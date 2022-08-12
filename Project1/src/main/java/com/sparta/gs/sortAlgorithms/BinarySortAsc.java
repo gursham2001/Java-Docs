@@ -2,7 +2,7 @@ package com.sparta.gs.sortAlgorithms;
 
 import com.sparta.gs.sortAlgorithms.BinaryTree.BinaryTree;
 
-public class BinarySort implements Sorter {
+public class BinarySortAsc implements Sorter {
     @Override
     public int[] SortArray(int[] arrays) {
         BinaryTree tree = new BinaryTree(arrays);
