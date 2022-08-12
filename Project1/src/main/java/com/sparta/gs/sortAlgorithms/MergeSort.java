@@ -40,6 +40,7 @@ public class MergeSort implements Sorter {
             a[k++] = r[j++];
         }
     }
+    // we to string it to be able to display it in the display manager as The sort name
     @Override
     public String toString() {
         return "MergeSort";

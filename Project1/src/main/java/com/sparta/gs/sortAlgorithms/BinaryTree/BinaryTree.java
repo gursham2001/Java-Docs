@@ -99,7 +99,7 @@ public class BinaryTree implements BinaryTreeInterface {
         return sortedArray;
     }
     private void addNodeToTree(Node node, int element) {
-        if (element < node.getValue()) {
+        if (element <= node.getValue()) {
             if (node.isLeftChildEmpty()) {
                 node.setLeftChild(new Node(element));
             } else {
@@ -135,8 +135,41 @@ public class BinaryTree implements BinaryTreeInterface {
         return 1 + numOfNodes(rootNode.getLeftChild()) + numOfNodes(rootNode.getRightChild());
     }
 
-//    @Override
-//    public int[] SortArray(int[] arrays) {
-//        return new int[0];
-//    }
+    // nested class
+    private class Node {
+        private final int value;
+        public Node left;
+        private Node leftChild;
+        private Node rightChild;
+        public Node(int value) {
+            this.value = value;
+        }
+        public int getValue() {
+            return value;
+        }
+        public Node getLeftChild() {
+            return leftChild;
+        }public Node getRightChild() {
+            return rightChild;
+        }
+        public void setLeftChild(Node leftChild) {
+            this.leftChild = leftChild;
+        }public void setRightChild(Node rightChild) {
+            this.rightChild = rightChild;
+        }
+
+        public boolean isLeftChildEmpty() {
+            if (leftChild == null) {
+                return true;
+            } else {
+                return false;
+            }
+        }public boolean isRightChildEmpty() {
+            if (rightChild == null) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
 }
