@@ -5,8 +5,12 @@ import java.util.zip.DataFormatException;
 public class App {
     public static void main(String[] args) {
 
+        // if call the name of a class that has throws and a exception we have to handle it in the class we called it in
+
         // to deal with exceptions we can use try, catch
         int[] numbers = {1,2,3,4};
+        // the problem with this code is we are calling a index that doesnt exist
+        // so it will throw ArrayIndexOutOfBounds
         System.out.println(numbers[6]);
 
         String[] letter = {"Manish", "David"};

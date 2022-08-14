@@ -6,13 +6,14 @@ import java.util.Comparator;
 public class Spartan {
 
     // implements Comparable<Spartan>
-
     private String name;
     private LocalDate startDate;
 
     // By putting this nested class in the class spartan
     // we are telling it only Spartan cares about this clsss
 
+    // Nesting the class
+    // Nested inner class
     // when calling a static method we call it by the name of the class
     public static class SpartanComparator implements Comparator<Spartan> {
         @Override
@@ -29,10 +30,6 @@ public class Spartan {
     public String getName() {
         return name;
     }
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public LocalDate getStartDate() {
         return startDate;
     }
