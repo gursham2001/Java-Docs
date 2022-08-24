@@ -39,7 +39,7 @@ public class App {
         spartans.sort(comparator);
         System.out.println(spartans);
 
-                
+
     }
 
     // Anonymous inner class
